@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,8 +28,8 @@
 		19B277C01F63BE5400194941 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B277BE1F63BE5400194941 /* LaunchScreen.xib */; };
 		19E1F62C1F5FD5F8004D3BA8 /* Atoms.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 19E1F62B1F5FD5F8004D3BA8 /* Atoms.mp4 */; };
 		19E1F62E1F5FD8EE004D3BA8 /* MediaBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1F62D1F5FD8EE004D3BA8 /* MediaBrowserDelegate.swift */; };
-		71596D6C20148BBE00870E29 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71596D6B20148BBE00870E29 /* SDWebImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		71596D6E20148BC300870E29 /* UICircularProgressRing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71596D6D20148BC300870E29 /* UICircularProgressRing.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		695DF36C24AF5EA1009BB33C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 695DF36B24AF5EA1009BB33C /* SDWebImage */; };
+		695DF36F24AF5EBD009BB33C /* UICircularProgressRing in Frameworks */ = {isa = PBXBuildFile; productRef = 695DF36E24AF5EBD009BB33C /* UICircularProgressRing */; };
 		786961890EA7C05AB0704224 /* Pods_MediaBrowserDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7711DC6E06460185D3F457 /* Pods_MediaBrowserDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71596D6C20148BBE00870E29 /* SDWebImage.framework in Frameworks */,
-				71596D6E20148BC300870E29 /* UICircularProgressRing.framework in Frameworks */,
+				695DF36F24AF5EBD009BB33C /* UICircularProgressRing in Frameworks */,
+				695DF36C24AF5EA1009BB33C /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +202,10 @@
 			dependencies = (
 			);
 			name = MediaBrowser;
+			packageProductDependencies = (
+				695DF36B24AF5EA1009BB33C /* SDWebImage */,
+				695DF36E24AF5EBD009BB33C /* UICircularProgressRing */,
+			);
 			productName = MediaBrowser;
 			productReference = 1906ABB11F5F81110052DC3A /* MediaBrowser.framework */;
 			productType = "com.apple.product-type.framework";
@@ -259,6 +263,10 @@
 				Base,
 			);
 			mainGroup = 1906ABA71F5F81110052DC3A;
+			packageReferences = (
+				695DF36A24AF5EA1009BB33C /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				695DF36D24AF5EBD009BB33C /* XCRemoteSwiftPackageReference "UICircularProgressRing" */,
+			);
 			productRefGroup = 1906ABB21F5F81110052DC3A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -521,7 +529,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -548,7 +557,11 @@
 				INFOPLIST_FILE = MediaBrowser/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.MediaBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -575,7 +588,11 @@
 				INFOPLIST_FILE = MediaBrowser/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.MediaBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -591,7 +608,10 @@
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = MediaBrowserDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.MediaBrowserDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -606,7 +626,10 @@
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = MediaBrowserDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.MediaBrowserDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -644,6 +667,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		695DF36A24AF5EA1009BB33C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.3;
+			};
+		};
+		695DF36D24AF5EBD009BB33C /* XCRemoteSwiftPackageReference "UICircularProgressRing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/luispadron/UICircularProgressRing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		695DF36B24AF5EA1009BB33C /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 695DF36A24AF5EA1009BB33C /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		695DF36E24AF5EBD009BB33C /* UICircularProgressRing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 695DF36D24AF5EBD009BB33C /* XCRemoteSwiftPackageReference "UICircularProgressRing" */;
+			productName = UICircularProgressRing;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1906ABA81F5F81110052DC3A /* Project object */;
 }
