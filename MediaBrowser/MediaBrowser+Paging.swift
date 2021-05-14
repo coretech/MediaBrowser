@@ -126,8 +126,8 @@ extension MediaBrowser {
                 // Add play button if needed
                 if page.displayingVideo() {
                     let playButton = UIButton(type: .custom)
-                    playButton.setImage(UIImage(named: "PlayButtonOverlayLarge", in: Bundle(for: MediaBrowser.self), compatibleWith: nil), for: .normal)
-                    playButton.setImage(UIImage(named: "PlayButtonOverlayLargeTap", in: Bundle(for: MediaBrowser.self), compatibleWith: nil), for: .highlighted)
+                    playButton.setImage(UIImage.br_bundleImage(named: "PlayButtonOverlayLarge"), for: .normal)
+                    playButton.setImage(UIImage.br_bundleImage(named: "PlayButtonOverlayLargeTap"), for: .highlighted)
                     playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
                     playButton.sizeToFit()
                     playButton.frame = frameForPlayButton(playButton: playButton, atIndex: index)
@@ -141,13 +141,13 @@ extension MediaBrowser {
                     if let selectedOffImage = mediaSelectedOffIcon {
                         selectedButton.setImage(selectedOffImage, for: .normal)
                     } else {
-                        selectedButton.setImage(UIImage(named: "ImageSelectedSmallOff", in: Bundle(for: MediaBrowser.self), compatibleWith: nil), for: .normal)
+                        selectedButton.setImage(UIImage.br_bundleImage(named: "ImageSelectedSmallOff"), for: .normal)
                     }
                     
                     if let selectedOnImage = mediaSelectedOnIcon {
                         selectedButton.setImage(selectedOnImage, for: .selected)
                     } else {
-                        selectedButton.setImage(UIImage(named: "ImageSelectedSmallOn", in: Bundle(for: MediaBrowser.self), compatibleWith: nil), for: .selected)
+                        selectedButton.setImage(UIImage.br_bundleImage(named: "ImageSelectedSmallOn"), for: .selected)
                     }
                     
                     selectedButton.sizeToFit()

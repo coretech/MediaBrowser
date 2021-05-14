@@ -192,9 +192,8 @@ class MediaZoomingScrollView: UIScrollView, UIScrollViewDelegate, TapDetectingIm
             if p.emptyImage {
                 if nil == loadingError {
                     loadingError = UIImageView()
-                    loadingError!.image = UIImage.imageForResourcePath(
-                        name: "ImageError",
-                        inBundle: Bundle(for: MediaZoomingScrollView.self))
+                    loadingError!.image = UIImage.br_bundleImage(
+                        named: "ImageError")
                     
                     loadingError!.isUserInteractionEnabled = false
                     loadingError!.autoresizingMask =
