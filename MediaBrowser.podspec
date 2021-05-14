@@ -29,9 +29,9 @@ MediaBrowser can display one or more images or videos by providing either UIImag
     :git => 'https://github.com/younatics/MediaBrowser.git', 
     :tag => s.version.to_s }
   s.source_files     = 'MediaBrowser/*.swift'
-  s.resources        = "MediaBrowser/*.xcassets"
+  s.resource_bundles = { 'MediaBrowser' => "MediaBrowser/*.xcassets" }
 
-  s.ios.deployment_target = '8.1'
+  s.ios.deployment_target = '10.3'
 
   s.frameworks = 'ImageIO', 'QuartzCore', 'AssetsLibrary', 'MediaPlayer'
   s.weak_frameworks = 'Photos'
